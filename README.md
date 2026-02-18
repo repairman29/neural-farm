@@ -4,6 +4,8 @@ Use your MacBook as the **orchestrator** for a local "Neural Farm": iPhone 15 Pr
 
 ## Quick start
 
+**Full checklist:** See **[BOOT_UP.md](BOOT_UP.md)** for the complete "how to boot up the farm" (one-time setup, every-time start, troubleshooting).
+
 1. **Config**  
    `config.yaml` is set for Pixel at 10.1.10.50. Add iPhone when ready (see comments in file).
 
@@ -58,8 +60,9 @@ The farm can run **two nodes** at once:
 
 | Doc | Purpose |
 |-----|--------|
+| **[BOOT_UP.md](BOOT_UP.md)** | **How to boot up the farm** — full checklist: one-time setup, every-time start, one-liner, troubleshooting, doc map. |
 | **[MAKE_IT_HAPPEN.md](MAKE_IT_HAPPEN.md)** | End-to-end: Pixel (Gemma) → farm → JARVIS. |
-| **[ONBOARDING_CURSOR.md](ONBOARDING_CURSOR.md)** | **Start here:** New project onboarding — start farm, set Cursor, pick model. |
+| **[ONBOARDING_CURSOR.md](ONBOARDING_CURSOR.md)** | **Start here for Cursor:** New project onboarding — start farm, set Cursor, pick model. |
 | **[CURSOR_FARM.md](CURSOR_FARM.md)** | Step-by-step: get Cursor using the farm (LiteLLM + ngrok + Cursor settings). |
 | **[PIXEL_INFERRLM.md](PIXEL_INFERRLM.md)** | Use **InferrLM** on the Pixel (port 8889). Adapter on Mac translates OpenAI ↔ InferrLM. |
 | **[IPHONE_NODE.md](IPHONE_NODE.md)** | Add iPhone as a second node: set **IPHONE_IP**, run `./start_farm.sh`. |
