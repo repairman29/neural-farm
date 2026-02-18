@@ -1,0 +1,70 @@
+# Neural Farm — LiteLLM proxy config (tuned for dev: longer timeouts for on-device inference)
+# Pixel runs InferrLM on 8889; adapters on Mac translate OpenAI ↔ InferrLM /api/chat.
+
+litellm_settings:
+  request_timeout: 600  # seconds; phones can be slow on first token / long prompts
+  drop_params: true     # gateway may send store/other params; backends (InferrLM) don't support them
+
+model_list:
+  # Pixel first (usually faster for dev); timeout allows cold model load
+  - model_name: openai
+    litellm_params:
+      model: openai/gemma
+      api_base: http://localhost:8888/v1
+      api_key: "sk-local-farm"
+      timeout: 600
+  - model_name: gpt-4o
+    litellm_params:
+      model: openai/gemma
+      api_base: http://localhost:8888/v1
+      api_key: "sk-local-farm"
+      timeout: 600
+  - model_name: gpt-4o-mini
+    litellm_params:
+      model: openai/gemma
+      api_base: http://localhost:8888/v1
+      api_key: "sk-local-farm"
+      timeout: 600
+  - model_name: gpt-3.5-turbo
+    litellm_params:
+      model: openai/gemma
+      api_base: http://localhost:8888/v1
+      api_key: "sk-local-farm"
+      timeout: 600
+  - model_name: cluster-model
+    litellm_params:
+      model: openai/gemma
+      api_base: http://localhost:8888/v1
+      api_key: "sk-local-farm"
+      timeout: 600
+  # iPhone (adapter on 8887)
+  - model_name: openai
+    litellm_params:
+      model: openai/llama-3.2
+      api_base: http://localhost:8887/v1
+      api_key: "sk-local-farm"
+      timeout: 600
+  - model_name: gpt-4o
+    litellm_params:
+      model: openai/llama-3.2
+      api_base: http://localhost:8887/v1
+      api_key: "sk-local-farm"
+      timeout: 600
+  - model_name: gpt-4o-mini
+    litellm_params:
+      model: openai/llama-3.2
+      api_base: http://localhost:8887/v1
+      api_key: "sk-local-farm"
+      timeout: 600
+  - model_name: gpt-3.5-turbo
+    litellm_params:
+      model: openai/llama-3.2
+      api_base: http://localhost:8887/v1
+      api_key: "sk-local-farm"
+      timeout: 600
+  - model_name: cluster-model
+    litellm_params:
+      model: openai/llama-3.2
+      api_base: http://localhost:8887/v1
+      api_key: "sk-local-farm"
+      timeout: 600

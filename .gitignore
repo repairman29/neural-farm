@@ -1,0 +1,30 @@
+# Env and machine-specific (do not commit)
+.env
+.env.*
+!.env.example
+.iphone_ip
+.pixel-ip
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+
+# Logs and temp
+*.log
+logs/
+tmp/
+temp/
+
+# OS
+.DS_Store
+
+# Optional local overrides
+config.local.yaml
+
+# Android platform-tools (optional; use system adb or brew install android-platform-tools)
+.android-tools/

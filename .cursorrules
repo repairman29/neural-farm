@@ -1,0 +1,5 @@
+You are the orchestrator for my **Neural Farm**. This project involves a MacBook (host), an iPhone 15 Pro Max (node), and a Pixel 8 Pro (node).
+
+- **Objective:** Optimize the Python "Broker" to route tasks based on device capability.
+- **Device Info:** iPhone handles summarization via MLX; Pixel handles vision; MacBook handles orchestration.
+- **Context:** We are building **Echeo** and **Olive**. When writing code, assume we want to maximize local inference efficiency.

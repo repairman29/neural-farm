@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Farm CLI: status | start | start-bg | warmup | dashboard
+# Run from neural-farm or set FARM_DIR. Usage: ./farm status | ./farm start
+
+set -e
+FARM_DIR="${FARM_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
+cd "$FARM_DIR"
+
+cmd="${1:-status}"
+
+case "$cmd" in
+  status)
+    exec "$FARM_DIR/status.sh"
+    ;;
+  start)
+    exec "$FARM_DIR/dev_farm.sh"
+    ;;
+  start-bg)
+    exec "$FARM_DIR/dev_farm.sh" --bg
+    ;;
+  warmup)
+    source .venv/bin/activate
+    exec python cluster_monitor.py --wake
+    ;;
+  dashboard)
+    echo "Starting health dashboard at http://127.0.0.1:9999"
+    exec python3 health_dashboard.py
+    ;;
+  *)
+    echo "Usage: $0 {status|start|start-bg|warmup|dashboard}"
+    echo "  status    - show adapters + proxy up/down"
+    echo "  start     - run dev farm (foreground)"
+    echo "  start-bg  - run dev farm in background"
+    echo "  warmup    - send wake-up request to nodes"
+    echo "  dashboard - serve health page at :9999"
+    exit 1
+    ;;
+esac

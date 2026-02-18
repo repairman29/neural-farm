@@ -1,0 +1,3 @@
+# Neural Farm — add to your project's .cursorrules or docs
+
+This project uses the Neural Farm for AI (Cursor, scripts, etc.). In Cursor: Settings → Models → Override Base URL = http://localhost:4000/v1, API Key = sk-local-farm. In chat/composer, pick the model that uses this endpoint (e.g. GPT-4o mini), not Cursor Pro or Claude. Start the farm from the neural-farm repo: ./dev_farm.sh. Status: ./status.sh
