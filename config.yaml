@@ -1,4 +1,4 @@
-# Neural Farm — LiteLLM proxy config (tuned for dev: longer timeouts for on-device inference)
+X# Neural Farm — LiteLLM proxy config (tuned for dev: longer timeouts for on-device inference)
 # Pixel runs InferrLM on 8889; adapters on Mac translate OpenAI ↔ InferrLM /api/chat.
 
 litellm_settings:
