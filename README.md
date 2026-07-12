@@ -1,5 +1,7 @@
 # Neural Farm — MacBook + iPhone + Pixel
 
+[![License: AGPL v3](https://img.shields.io/badge/license-AGPLv3-blue.svg)](LICENSE)
+
 Use your MacBook as the **orchestrator** for a local "Neural Farm": iPhone 15 Pro Max (MLX/summarization) and Pixel 8 Pro (vision), exposed as a single API to Cursor via LiteLLM + ngrok.
 
 ## Quick start
@@ -110,3 +112,9 @@ The farm can run **two nodes** at once:
 - **Phones:** Local LLM server + Guided Access.
 - **MacBook:** LiteLLM proxy (`litellm --config config.yaml --port 4000`) + ngrok tunnel.
 - **Cursor:** Single “virtual” endpoint via the ngrok URL; the bot is briefed via `.cursorrules` for Echeo/Olive and device roles (iPhone = summarization/MLX, Pixel = vision).
+
+## License
+
+**GNU AGPLv3** — free to run, study, and modify. Run a modified version as a network service and you must share your changes. Own your tools; keep them ownable.
+
+Copyright (C) 2026 Jeff Adkins (repairman29). See [LICENSE](LICENSE).
