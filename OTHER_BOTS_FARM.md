@@ -21,7 +21,7 @@ Anything that lets you set a **custom OpenAI base URL** (or “endpoint”) can 
 On the **MacBook**:
 
 ```bash
-cd /Users/jeffadkins/neural-farm && ./start_farm.sh
+cd ~/neural-farm && ./start_farm.sh
 ```
 
 That starts the InferrLM adapter + LiteLLM proxy on port **4000**. Leave it running. No ngrok needed for bots on the same Mac or same Wi‑Fi.
@@ -43,7 +43,7 @@ Every Cursor window/workspace that uses the farm needs the **same** settings:
 - **API Key:** `sk-local-farm`
 - When chatting or using Composer, **pick a model that uses this endpoint** (e.g. **GPT-4o mini**), not Cursor Pro / Claude.
 
-There’s no “per-bot” config—Cursor’s Models settings apply to that Cursor instance. So every Cursor window where you want the farm: set the override and key once, then always choose the farm model (GPT-4o mini, etc.) in the model dropdown.
+There’s no “per-bot” config-Cursor’s Models settings apply to that Cursor instance. So every Cursor window where you want the farm: set the override and key once, then always choose the farm model (GPT-4o mini, etc.) in the model dropdown.
 
 For **MCP servers, agents, or scripts** that Cursor (or another app) runs and that call an LLM: point them at the same base URL and key (e.g. via env vars below).
 
@@ -160,7 +160,7 @@ curl -s http://localhost:4000/v1/chat/completions \
 
 **BEAST-MODE** (agent missions / dogfood) can call each device’s **InferrLM server on port 8889** directly (no proxy). Each device has **one model** (see `config.yaml`: Pixel → Gemma, iPhone → Llama). In BEAST-MODE’s `website/.env.local` set:
 
-- **Easiest:** **`INFERRLM_TAILSCALE_DISCOVER=1`** — discovers devices via Tailscale (probes each peer at `:8889/api/tags`). No manual URLs.
+- **Easiest:** **`INFERRLM_TAILSCALE_DISCOVER=1`**, discovers devices via Tailscale (probes each peer at `:8889/api/tags`). No manual URLs.
 - Or **`INFERRLM_DEVICE_MODELS`** = `url|model,url|model`, e.g.  
   `http://PIXEL_IP:8889|gemma-3-4b-it-Q4_K_M.gguf,http://IPHONE_IP:8889|Llama-3.2-3B-Instruct-Q4_K_M.gguf`  
   Use the same URLs as this repo’s `.env` (PIXEL_URL / IPHONE_IP); model names from each device’s `http://DEVICE:8889/api/tags`. See BEAST-MODE **RUNBOOK.md** and **docs/DOGFOOD_SOUP_TO_NUTS.md**.

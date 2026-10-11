@@ -41,7 +41,7 @@ Those names are configured in your proxy to route to the Pixel. The label in Cur
 - Confirm you’re **not** picking a premium Cursor/Claude model in the model dropdown.
 - Restart Cursor and try again.
 - Ensure the LiteLLM proxy is running:  
-  `cd /Users/jeffadkins/neural-farm && source .venv/bin/activate && litellm --config config.yaml --port 4000`
+  `cd ~/neural-farm && source .venv/bin/activate && litellm --config config.yaml --port 4000`
 
 ---
 

@@ -12,7 +12,7 @@ You can push the model over WiFi and never need the USB “Allow?” prompt.
 2. Tap **“Pair device with pairing code”**. You’ll see an IP and port (e.g. `10.1.10.93:37829`) and a **6-digit code**.
 3. **On Mac**, in Terminal:
    ```bash
-   cd /Users/jeffadkins/neural-farm
+   cd ~/neural-farm
    chmod +x push_pixel_wireless.sh
    ./push_pixel_wireless.sh 10.1.10.93:37829
    ```
@@ -28,7 +28,7 @@ You can push the model over WiFi and never need the USB “Allow?” prompt.
 2. Find **Default USB configuration** (or **Select USB configuration**).
 3. Set it to **File transfer** or **MTP** (not "Charging" or "No data transfer").
 4. **Unplug the USB cable**, wait a couple of seconds, then **plug it back in**.
-5. On the **Pixel**, you should see **"Allow USB debugging?"** — tap **Allow** (and optionally "Always allow from this computer").
+5. On the **Pixel**, you should see **"Allow USB debugging?"**, tap **Allow** (and optionally "Always allow from this computer").
 
 ---
 
@@ -46,13 +46,13 @@ You can push the model over WiFi and never need the USB “Allow?” prompt.
 In Terminal, from the project folder:
 
 ```bash
-/Users/jeffadkins/neural-farm/.android-tools/platform-tools/adb devices
+~/neural-farm/.android-tools/platform-tools/adb devices
 ```
 
 You should see your device (not "unauthorized"). Then run:
 
 ```bash
-/Users/jeffadkins/neural-farm/sideload_models.sh
+~/neural-farm/sideload_models.sh
 ```
 
 to push the Gemma model to the Pixel.

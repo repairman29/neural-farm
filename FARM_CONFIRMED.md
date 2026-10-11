@@ -1,4 +1,4 @@
-# Neural Farm — Confirmed Working
+# Neural Farm, Confirmed Working
 
 **Date:** 2026-02-14
 
@@ -11,7 +11,7 @@
 | Pixel adapter (8888 → 10.1.10.50:8889) | OK |
 | iPhone adapter (8887 → 169.254.136.118:8889) | OK (when running) |
 | LiteLLM proxy (4000) | OK |
-| **Completion through proxy** | **OK** — model replied `"confirmed"` |
+| **Completion through proxy** | **OK**, model replied `"confirmed"` |
 
 ---
 

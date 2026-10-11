@@ -1,4 +1,4 @@
-# Cursor + Neural Farm — Do This Now
+# Cursor + Neural Farm, Do This Now
 
 The LiteLLM proxy is running on port 4000. Finish the setup so Cursor uses the farm.
 
@@ -26,7 +26,7 @@ Your Cursor base URL = that URL + `/v1`, e.g. `https://abc123.ngrok-free.app/v1`
 
 ---
 
-## 2. Point Cursor at the farm (manual — Cursor doesn’t store this in settings.json)
+## 2. Point Cursor at the farm (manual, Cursor doesn’t store this in settings.json)
 
 1. In **Cursor:** **Settings** (Cmd + ,) → **Models**.
 2. Find **OpenAI** → **Configure** / **Override**.

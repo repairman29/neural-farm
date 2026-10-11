@@ -9,7 +9,7 @@ Same idea as the Pixel: run **InferrLM** on the iPhone with **Server** on, then 
 1. **Install InferrLM** (App Store or [GitHub](https://github.com/sbhjt-gr/InferrLM)).
 2. **Import your model** (e.g. Llama 3.2 3B GGUF) from Files/Downloads.
 3. **Server tab** → Port **8889** → **Allow all devices on Wi‑Fi** → turn **Server** **ON**.
-4. Note the URL shown, e.g. `http://10.1.10.55:8889` or `http://169.254.136.118:8889` — that’s your **iPhone IP** and port (8889).
+4. Note the URL shown, e.g. `http://10.1.10.55:8889` or `http://169.254.136.118:8889`, that’s your **iPhone IP** and port (8889).
 
 ---
 
@@ -18,7 +18,7 @@ Same idea as the Pixel: run **InferrLM** on the iPhone with **Server** on, then 
 1. **Get the iPhone IP** (from the app, or iPhone **Settings → Wi‑Fi → tap (i) → IP Address**).
 2. **Start the farm with the iPhone:**
    ```bash
-   cd /Users/jeffadkins/neural-farm
+   cd ~/neural-farm
    export IPHONE_IP=169.254.136.118   # use your iPhone’s IP (or 10.1.10.x if on Wi‑Fi)
    ./start_farm.sh
    ```

@@ -1,4 +1,4 @@
-# Neural Farm — Step-by-step guide
+# Neural Farm, Step-by-step guide
 
 **Use this as your single checklist.** The project is already set up; follow the steps below where **you** need to act.
 
@@ -7,21 +7,21 @@
 ## What’s already done (no action needed)
 
 - **Project folder** `neural-farm` with config, monitor script, and Cursor rules
-- **`config.yaml`** — LiteLLM config (you’ll only add your phone IPs)
-- **`cluster_monitor.py`** — Health check for iPhone and Pixel
-- **`.cursorrules`** — Cursor is briefed as the farm orchestrator for Echeo/Olive
-- **`requirements.txt`** — Python deps listed
+- **`config.yaml`**, LiteLLM config (you’ll only add your phone IPs)
+- **`cluster_monitor.py`**, Health check for iPhone and Pixel
+- **`.cursorrules`**, Cursor is briefed as the farm orchestrator for Echeo/Olive
+- **`requirements.txt`**, Python deps listed
 
 ---
 
 ## Your steps (in order)
 
-### Step 1 — Install tools on your MacBook
+### Step 1, Install tools on your MacBook
 
 **1.1** Open Terminal and go to the project:
 
 ```bash
-cd /Users/jeffadkins/neural-farm
+cd ~/neural-farm
 ```
 
 **1.2** Create a virtual environment (recommended) and install Python deps:
@@ -37,11 +37,11 @@ pip install -r requirements.txt
 - Option A: `brew install ngrok`  
 - Option B: Download from [ngrok.com](https://ngrok.com) and put `ngrok` in your PATH  
 
-**Check:** Run `ngrok version` — it should print a version.
+**Check:** Run `ngrok version`, it should print a version.
 
 ---
 
-### Step 2 — Get your phones’ IP addresses
+### Step 2, Get your phones’ IP addresses
 
 **2.1** Put both phones on the **same Wi‑Fi** as your MacBook.
 
@@ -57,11 +57,11 @@ pip install -r requirements.txt
 
 If your network uses a different subnet (e.g. `10.0.0.x`), use that instead of `192.168.1.x`.
 
-**Check:** Run `python check_ready.py` — it should say config IPs are set (or tell you what’s missing).
+**Check:** Run `python check_ready.py`, it should say config IPs are set (or tell you what’s missing).
 
 ---
 
-### Step 3 — Start the LLM servers on the phones
+### Step 3, Start the LLM servers on the phones
 
 **3.1** On each phone, open the app that serves the local LLM (e.g. “PocketPal AI”, “Local LLM Server”, or whatever exposes an OpenAI-compatible API on port **8080**).
 
@@ -75,16 +75,16 @@ If your network uses a different subnet (e.g. `10.0.0.x`), use that instead of `
 python cluster_monitor.py
 ```
 
-You want to see at least one node as `[UP]`. If both show `[DOWN]`, the phones aren’t reachable or the server isn’t on port 8080 — double-check IPs and app settings.
+You want to see at least one node as `[UP]`. If both show `[DOWN]`, the phones aren’t reachable or the server isn’t on port 8080, double-check IPs and app settings.
 
 ---
 
-### Step 4 — Start the LiteLLM proxy on your MacBook
+### Step 4, Start the LiteLLM proxy on your MacBook
 
 **4.1** In Terminal, in the project folder with the venv activated:
 
 ```bash
-cd /Users/jeffadkins/neural-farm
+cd ~/neural-farm
 source .venv/activate
 litellm --config config.yaml --port 4000
 ```
@@ -93,7 +93,7 @@ Leave this running. You should see LiteLLM start and listen on port 4000.
 
 ---
 
-### Step 5 — Start the ngrok tunnel (second terminal)
+### Step 5, Start the ngrok tunnel (second terminal)
 
 **5.1** Open a **second** Terminal window/tab.
 
@@ -115,7 +115,7 @@ Leave ngrok running.
 
 ---
 
-### Step 6 — Point Cursor at your farm
+### Step 6, Point Cursor at your farm
 
 **6.1** In Cursor: open **Settings** (Cmd+,).
 
@@ -134,7 +134,7 @@ Leave ngrok running.
 
 ---
 
-### Step 7 — (Optional) Watch cluster health
+### Step 7, (Optional) Watch cluster health
 
 In a **third** terminal, from the project folder:
 
@@ -147,7 +147,7 @@ This prints a health line for each phone every 30 seconds. Ctrl+C to stop.
 
 ---
 
-## Quick reference — what runs where
+## Quick reference, what runs where
 
 | Where        | What to run |
 |-------------|-------------|

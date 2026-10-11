@@ -23,7 +23,7 @@ if [ "$1" = "--bg" ]; then
   fi
 fi
 
-# Optional: load .env (PIXEL_URL, IPHONE_IP, FARM_DEV) — see NEW_NETWORK.md for new Wi‑Fi
+# Optional: load .env (PIXEL_URL, IPHONE_IP, FARM_DEV), see NEW_NETWORK.md for new Wi‑Fi
 [ -f .env ] && set -a && source .env && set +a
 # iPhone IP from file if not set
 [ -z "$IPHONE_IP" ] && [ -f .iphone_ip ] && export IPHONE_IP=$(cat .iphone_ip)

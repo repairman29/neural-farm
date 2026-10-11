@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Neural Farm — Sideload GGUF models to iPhone (PocketPal AI) and Pixel (PocketPal Android)
+# Neural Farm, Sideload GGUF models to iPhone (PocketPal AI) and Pixel (PocketPal Android)
 # Run: ./sideload_models.sh
 # Optional: ./sideload_models.sh --download  (download missing models to ~/Downloads)
 #
@@ -16,7 +16,7 @@ do_download=false
 [[ "${1:-}" == "--download" ]] && do_download=true
 
 echo "=============================================="
-echo "  Neural Farm — Sideload GGUF Models"
+echo "  Neural Farm, Sideload GGUF Models"
 echo "=============================================="
 echo ""
 

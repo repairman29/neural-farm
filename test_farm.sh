@@ -40,9 +40,9 @@ resp=$(curl -s -m $PROXY_TIMEOUT -X POST http://127.0.0.1:4000/v1/chat/completio
 
 if echo "$resp" | grep -q '"choices"'; then
   content=$(echo "$resp" | python3 -c "import json,sys; d=json.load(sys.stdin); c=d.get('choices',[{}])[0].get('message',{}).get('content',''); print(c.strip())" 2>/dev/null || echo "?")
-  echo "  OK — reply: \"$content\""
+  echo "  OK, reply: \"$content\""
 else
-  echo "  FAIL — no choices in response (timeout or error)."
+  echo "  FAIL, no choices in response (timeout or error)."
   echo "$resp" | head -c 300
   echo ""
   exit 1

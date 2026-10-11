@@ -1,4 +1,4 @@
-# Neural Farm — Pixel only (dev: predictable single node, no iPhone)
+# Neural Farm, Pixel only (dev: predictable single node, no iPhone)
 # Use: litellm --config config-dev-pixel-only.yaml --port 4000
 
 litellm_settings:

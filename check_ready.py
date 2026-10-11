@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Neural Farm — "What do I do next?" checker.
+Neural Farm, "What do I do next?" checker.
 
 Run from the project folder:  python check_ready.py
 

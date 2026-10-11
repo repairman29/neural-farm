@@ -1,4 +1,4 @@
-# Neural Farm — Optimized for Development
+# Neural Farm, Optimized for Development
 
 Quick setup and tips for using the farm while coding.
 
@@ -7,7 +7,7 @@ Quick setup and tips for using the farm while coding.
 ## One command (recommended)
 
 ```bash
-cd /Users/jeffadkins/neural-farm
+cd ~/neural-farm
 ./dev_farm.sh
 ```
 

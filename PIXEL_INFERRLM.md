@@ -1,6 +1,6 @@
 # Pixel 8 Pro as a Neural Farm Node: InferrLM (Server Mode)
 
-PocketPal runs models locally but **does not expose an API**—nothing listens on port 8080. To turn your Pixel into a real network node, use an app that has **Server Mode** with an OpenAI-compatible API.
+PocketPal runs models locally but **does not expose an API**-nothing listens on port 8080. To turn your Pixel into a real network node, use an app that has **Server Mode** with an OpenAI-compatible API.
 
 **InferrLM** (formerly Inferra) is the recommended replacement for the Pixel side: free, open-source, and built for this use case.
 
@@ -19,7 +19,7 @@ PocketPal runs models locally but **does not expose an API**—nothing listens o
 
 ### 1. Get InferrLM
 
-- **APK:** [InferrLM on GitHub](https://github.com/sbhjt-gr/InferrLM) — download the latest release APK and sideload, or install from the store if listed.
+- **APK:** [InferrLM on GitHub](https://github.com/sbhjt-gr/InferrLM), download the latest release APK and sideload, or install from the store if listed.
 - **Model:** Use the same **Gemma 3 4B GGUF** you pushed for PocketPal (e.g. `gemma-3-4b-it-Q4_K_M.gguf` in `Download`). In the app, import from local storage (e.g. **Download** folder).
 
 ### 2. Start the server on the Pixel
@@ -59,7 +59,7 @@ Use **model_sync.py** in this repo to:
 - Verify the Pixel’s `/v1/models` endpoint returns the expected model.
 
 ```bash
-cd /Users/jeffadkins/neural-farm
+cd ~/neural-farm
 source .venv/bin/activate
 python model_sync.py --list
 python model_sync.py --sync

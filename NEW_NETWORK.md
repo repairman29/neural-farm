@@ -1,4 +1,4 @@
-# New network — update device IPs
+# New network, update device IPs
 
 On a **new Wi‑Fi network**, your Pixel and iPhone get new IPs. The farm uses the **old** IPs until you update them.
 
@@ -14,7 +14,7 @@ cd /path/to/neural-farm
 # Optional: ./sniff_devices.sh --write   # update .env with found IPs (add --all to include other nets)
 ```
 
-If ping fails, you're on a different network — update IPs below and restart the farm.
+If ping fails, you're on a different network, update IPs below and restart the farm.
 
 **Other Wi‑Fi attached to your router (guest, mesh, 5G SSID):**  
 If your Pixel or iPhone is on a different SSID that’s still part of your setup (e.g. guest network), run:
@@ -44,7 +44,7 @@ That scans every subnet your Mac is on **plus** common “other” subnets (e.g.
 
 ## 2. Tell the farm the new IPs
 
-**Option A — environment (recommended)**
+**Option A, environment (recommended)**
 
 Create or edit `.env` in the neural-farm folder:
 
@@ -61,7 +61,7 @@ PIXEL_URL=http://192.168.1.42:8889
 IPHONE_IP=192.168.1.43
 ```
 
-**Option B — one-time export**
+**Option B, one-time export**
 
 ```bash
 export PIXEL_URL=http://192.168.1.42:8889
@@ -113,4 +113,4 @@ You should see Pixel (8888) and (if iPhone is set) iPhone (8887) **up**, and Pro
 | 3 | Restart the farm: `./dev_farm.sh` or `./dev_farm.sh --bg`. |
 | 4 | Check: `./farm status`. |
 
-**Cursor** keeps using **http://localhost:4000/v1** — only the Mac needs to know the new device IPs.
+**Cursor** keeps using **http://localhost:4000/v1**, only the Mac needs to know the new device IPs.

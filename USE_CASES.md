@@ -1,4 +1,4 @@
-# Neural Farm — Use Cases & Value
+# Neural Farm, Use Cases & Value
 
 What the farm is for and how to talk about it.
 
@@ -35,4 +35,4 @@ What the farm is for and how to talk about it.
 
 ## One-liner for stakeholders
 
-**Neural Farm:** Local AI on your Pixel and iPhone, exposed as one API to Cursor and other tools—no cloud, no per-token cost, full control.
+**Neural Farm:** Local AI on your Pixel and iPhone, exposed as one API to Cursor and other tools-no cloud, no per-token cost, full control.

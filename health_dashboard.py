@@ -51,7 +51,7 @@ class Handler(BaseHTTPRequestHandler):
 </style></head><body>
   <h1>Neural Farm</h1>
   <ul>
-    {"".join(f'<li class="{"up" if s["up"] else "down"}"><span class="status">{"✓" if s["up"] else "✗"}</span> {s["label"]}' + (f' — {s["error"]}' if s.get("error") else '') + '</li>' for s in statuses)}
+    {"".join(f'<li class="{"up" if s["up"] else "down"}"><span class="status">{"✓" if s["up"] else "✗"}</span> {s["label"]}' + (f', {s["error"]}' if s.get("error") else '') + '</li>' for s in statuses)}
   </ul>
   <p>{"All up." if all_up else "Start: ./dev_farm.sh"}</p>
 </body></html>"""

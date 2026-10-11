@@ -14,14 +14,14 @@ So: **Pixel = Gemma brain, Mac = adapter + proxy, JARVIS = same Mac, talks to lo
 
 ---
 
-## Step 1: Pixel — InferrLM + Gemma + Server Mode
+## Step 1: Pixel, InferrLM + Gemma + Server Mode
 
 ### 1.1 Get InferrLM and a Gemma model on the Pixel
 
-- **InferrLM:** [InferrLM on GitHub](https://github.com/sbhjt-gr/InferrLM) — download the latest APK and install (sideload or store).
+- **InferrLM:** [InferrLM on GitHub](https://github.com/sbhjt-gr/InferrLM), download the latest APK and install (sideload or store).
 - **Gemma GGUF:** Put a Gemma 3 GGUF on the Pixel (e.g. `gemma-3-4b-it-Q4_K_M.gguf`) in **Download** or a folder InferrLM can see. You can push from the Mac:
   ```bash
-  cd /Users/jeffadkins/neural-farm
+  cd ~/neural-farm
   source .venv/bin/activate
   python model_sync.py --sync   # syncs ~/Downloads/*.gguf to Pixel (uses adb)
   ```
@@ -49,7 +49,7 @@ You should see your model listed. If not, check: same Wi‑Fi, InferrLM server O
 
 ---
 
-## Step 2: Mac — Start the farm (adapter + LiteLLM)
+## Step 2: Mac, Start the farm (adapter + LiteLLM)
 
 ### 2.1 Set the Pixel URL (if your Pixel IP is not 10.1.10.50)
 
@@ -64,7 +64,7 @@ export PIXEL_URL=http://YOUR_PIXEL_IP:8889
 ### 2.2 Install deps and start the farm (once per session)
 
 ```bash
-cd /Users/jeffadkins/neural-farm
+cd ~/neural-farm
 pip install -r requirements.txt   # first time only
 ./start_farm.sh
 ```
@@ -77,7 +77,7 @@ Leave this running. It starts:
 ### 2.3 Optional: warm up the Pixel (first request can be slow)
 
 ```bash
-cd /Users/jeffadkins/neural-farm
+cd ~/neural-farm
 source .venv/bin/activate
 python cluster_monitor.py --wake
 ```
@@ -95,7 +95,7 @@ You should get JSON with a reply from Gemma.
 
 ---
 
-## Step 3: JARVIS — Point at the farm
+## Step 3: JARVIS, Point at the farm
 
 ### 3.1 Point JARVIS at the farm (localhost:4000 on the Mac)
 
@@ -131,7 +131,7 @@ node scripts/start-gateway-with-vault.js
 | 2 | Mac | `cd neural-farm && ./start_farm.sh` (set `PIXEL_URL` if IP ≠ 10.1.10.50) |
 | 3 | Mac | `curl http://PIXEL_IP:8889/api/tags` and `curl localhost:4000/v1/chat/completions ...` to confirm |
 | 4 | JARVIS | `node scripts/set-primary-neural-farm.js` then restart gateway |
-| 5 | — | Use JARVIS (UI, Discord, MCP); completions come from Gemma on the Pixel |
+| 5 |, | Use JARVIS (UI, Discord, MCP); completions come from Gemma on the Pixel |
 
 ---
 

@@ -1,4 +1,4 @@
-# Neural Farm — Improve Value (Feb 2026)
+# Neural Farm, Improve Value (Feb 2026)
 
 Concrete ways to increase the value of your local farm and dev setup this month.
 
@@ -29,7 +29,7 @@ Concrete ways to increase the value of your local farm and dev setup this month.
 
 | Improvement | Why it helps |
 |-------------|--------------|
-| **Use-case doc** | One-pager: “Neural Farm use cases — Cursor (coding), Olive (vision/receipts), Echeo (…), other bots (Discord, scripts).” Makes it easy to explain value to yourself or others. |
+| **Use-case doc** | One-pager: “Neural Farm use cases, Cursor (coding), Olive (vision/receipts), Echeo (…), other bots (Discord, scripts).” Makes it easy to explain value to yourself or others. |
 | **Cost framing** | Rough “tokens per day” or “equivalent API cost saved” (e.g. “~$X/month if this were OpenAI”) for stakeholder or personal motivation. |
 | **Privacy / speed pitch** | One sentence: “All inference on your devices; no code or prompts leave the farm.” Useful for compliance or team buy-in. |
 
@@ -48,14 +48,14 @@ Concrete ways to increase the value of your local farm and dev setup this month.
 
 ## 5. Quick wins (done ✓)
 
-1. **Streaming** — In `inferrlm_adapter.py`; when client sends `stream: true`, adapter returns SSE (one chunk + `[DONE]`).
-2. **`farm status`** — `./farm status` (or `./status.sh`) curls adapter + proxy health.
-3. **Use cases** — [USE_CASES.md](USE_CASES.md): Cursor, Olive, other bots, cost framing, privacy pitch.
-4. **config-dev-pixel-only.yaml** — Pixel-only proxy for single-node dev.
-5. **Health dashboard** — `./farm dashboard` serves http://127.0.0.1:9999.
-6. **Project hint** — `templates/NEW_PROJECT_FARM.md` and `templates/cursorrules_farm_snippet.txt`.
-7. **Scheduled warm-up** — [docs/SCHEDULED_WARMUP.md](docs/SCHEDULED_WARMUP.md) (launchd/cron).
-8. **farm script** — `./farm {status|start|start-bg|warmup|dashboard}`.
+1. **Streaming**, In `inferrlm_adapter.py`; when client sends `stream: true`, adapter returns SSE (one chunk + `[DONE]`).
+2. **`farm status`**, `./farm status` (or `./status.sh`) curls adapter + proxy health.
+3. **Use cases**, [USE_CASES.md](USE_CASES.md): Cursor, Olive, other bots, cost framing, privacy pitch.
+4. **config-dev-pixel-only.yaml**, Pixel-only proxy for single-node dev.
+5. **Health dashboard**, `./farm dashboard` serves http://127.0.0.1:9999.
+6. **Project hint**, `templates/NEW_PROJECT_FARM.md` and `templates/cursorrules_farm_snippet.txt`.
+7. **Scheduled warm-up**, [docs/SCHEDULED_WARMUP.md](docs/SCHEDULED_WARMUP.md) (launchd/cron).
+8. **farm script**, `./farm {status|start|start-bg|warmup|dashboard}`.
 
 ---
 

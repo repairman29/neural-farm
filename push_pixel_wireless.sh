@@ -19,7 +19,7 @@ if [[ ! -x "$ADB" ]]; then
 fi
 
 if [[ ! -f "$SRC" ]]; then
-  echo "Missing $SRC — run sideload_models.sh --download first."
+  echo "Missing $SRC, run sideload_models.sh --download first."
   exit 1
 fi
 
@@ -42,7 +42,7 @@ if [[ -n "$CODE" ]]; then
   echo "Pairing with $PAIR (code provided)..."
   echo "$CODE" | "$ADB" pair "$PAIR"
 else
-  echo "Pairing with $PAIR — enter the 6-digit code from your Pixel when prompted."
+  echo "Pairing with $PAIR, enter the 6-digit code from your Pixel when prompted."
   "$ADB" pair "$PAIR"
 fi
 echo "Pairing done. Connecting..."

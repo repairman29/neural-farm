@@ -53,7 +53,7 @@ More: [KEEP_RUNNING.md](KEEP_RUNNING.md), [ONBOARDING_CURSOR.md](ONBOARDING_CURS
 ## Optional: start the farm automatically
 
 - **Scheduled (e.g. 8am):** [docs/SCHEDULED_WARMUP.md](docs/SCHEDULED_WARMUP.md) (launchd or cron).
-- **Single starter (no double start):** [ONE_STARTER.md](ONE_STARTER.md) — e.g. only cron runs `./dev_farm.sh --bg`; LaunchAgent unloaded.
+- **Single starter (no double start):** [ONE_STARTER.md](ONE_STARTER.md), e.g. only cron runs `./dev_farm.sh --bg`; LaunchAgent unloaded.
 
 ---
 
@@ -62,7 +62,7 @@ More: [KEEP_RUNNING.md](KEEP_RUNNING.md), [ONBOARDING_CURSOR.md](ONBOARDING_CURS
 | Doc | When to use it |
 |-----|----------------|
 | **[README.md](README.md)** | Overview, quick start, project layout, latency, use cases. |
-| **[BOOT_UP.md](BOOT_UP.md)** | **This doc** — full “how to boot up” checklist. |
+| **[BOOT_UP.md](BOOT_UP.md)** | **This doc**, full “how to boot up” checklist. |
 | **[DEV.md](DEV.md)** | Dev mode: one command, background, timeouts, quick test. |
 | **[ONBOARDING_CURSOR.md](ONBOARDING_CURSOR.md)** | Cursor: start farm, set Base URL/key, pick model, verify. |
 | **[KEEP_RUNNING.md](KEEP_RUNNING.md)** | Keeping farm up: IPs, InferrLM on devices, restart. |

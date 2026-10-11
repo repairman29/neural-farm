@@ -1,4 +1,4 @@
-# Neural Farm — MacBook + iPhone + Pixel
+# Neural Farm, MacBook + iPhone + Pixel
 
 [![License: AGPL v3](https://img.shields.io/badge/license-AGPLv3-blue.svg)](LICENSE)
 
@@ -22,8 +22,8 @@ Use your MacBook as the **orchestrator** for a local "Neural Farm": iPhone 15 Pr
    Run your local LLM server (e.g. “PocketPal AI” or “Local LLM Server”) in **Guided Access** so the screen doesn’t sleep. Ensure it serves an OpenAI-compatible API on port 8080.
 
 4. **Start the farm (MacBook)**  
-   **Dev (recommended):** `./dev_farm.sh` — adapters + proxy, warms models, 120s timeouts. See [DEV.md](DEV.md).  
-   **Standard:** `./start_farm.sh` — same, no warm-up.  
+   **Dev (recommended):** `./dev_farm.sh`, adapters + proxy, warms models, 120s timeouts. See [DEV.md](DEV.md).  
+   **Standard:** `./start_farm.sh`, same, no warm-up.  
    (Pixel/iPhone use InferrLM; adapters on Mac translate OpenAI `/v1/*` ↔ InferrLM `/api/chat`.)
 
 5. **Tunnel to Cursor (MacBook, second terminal)**  
@@ -39,7 +39,7 @@ Use your MacBook as the **orchestrator** for a local "Neural Farm": iPhone 15 Pr
 
 7. **Check cluster health (MacBook)**  
    ```bash
-   ./farm status      # or ./status.sh — adapters + proxy up/down
+   ./farm status      # or ./status.sh, adapters + proxy up/down
    ./farm dashboard   # open http://127.0.0.1:9999 for a quick health page
    python cluster_monitor.py           # one-shot
    python cluster_monitor.py --watch  # every 30s until Ctrl+C
@@ -54,7 +54,7 @@ The farm can run **two nodes** at once:
 | **Pixel**  | localhost:8888 | 10.1.10.50:8889 | Gemma (GGUF)     |
 | **iPhone** | localhost:8887 | IPHONE_IP:8889  | Llama 3.2 (GGUF) |
 
-**config.yaml** lists both: each model name (e.g. `gpt-4o-mini`, `cluster-model`) has two entries — one for Pixel, one for iPhone. **LiteLLM load-balances** across them (same model name → requests distributed across both nodes). Start with iPhone: `export IPHONE_IP=your_iphone_ip && ./start_farm.sh`. See [IPHONE_NODE.md](IPHONE_NODE.md) and [MAKE_IT_HAPPEN.md](MAKE_IT_HAPPEN.md).
+**config.yaml** lists both: each model name (e.g. `gpt-4o-mini`, `cluster-model`) has two entries, one for Pixel, one for iPhone. **LiteLLM load-balances** across them (same model name → requests distributed across both nodes). Start with iPhone: `export IPHONE_IP=your_iphone_ip && ./start_farm.sh`. See [IPHONE_NODE.md](IPHONE_NODE.md) and [MAKE_IT_HAPPEN.md](MAKE_IT_HAPPEN.md).
 
 ---
 
@@ -62,9 +62,9 @@ The farm can run **two nodes** at once:
 
 | Doc | Purpose |
 |-----|--------|
-| **[BOOT_UP.md](BOOT_UP.md)** | **How to boot up the farm** — full checklist: one-time setup, every-time start, one-liner, troubleshooting, doc map. |
+| **[BOOT_UP.md](BOOT_UP.md)** | **How to boot up the farm**, full checklist: one-time setup, every-time start, one-liner, troubleshooting, doc map. |
 | **[MAKE_IT_HAPPEN.md](MAKE_IT_HAPPEN.md)** | End-to-end: Pixel (Gemma) → farm → JARVIS. |
-| **[ONBOARDING_CURSOR.md](ONBOARDING_CURSOR.md)** | **Start here for Cursor:** New project onboarding — start farm, set Cursor, pick model. |
+| **[ONBOARDING_CURSOR.md](ONBOARDING_CURSOR.md)** | **Start here for Cursor:** New project onboarding, start farm, set Cursor, pick model. |
 | **[CURSOR_FARM.md](CURSOR_FARM.md)** | Step-by-step: get Cursor using the farm (LiteLLM + ngrok + Cursor settings). |
 | **[PIXEL_INFERRLM.md](PIXEL_INFERRLM.md)** | Use **InferrLM** on the Pixel (port 8889). Adapter on Mac translates OpenAI ↔ InferrLM. |
 | **[IPHONE_NODE.md](IPHONE_NODE.md)** | Add iPhone as a second node: set **IPHONE_IP**, run `./start_farm.sh`. |
@@ -102,10 +102,10 @@ The farm can run **two nodes** at once:
 
 ## Use cases
 
-- **Cursor** — Coding, chat, Composer; use farm model (e.g. gpt-4o-mini) for free on-device inference.
-- **Other bots** — Discord, Slack, scripts, LangChain; point at `http://localhost:4000/v1` + `sk-local-farm`.
-- **Echeo / Olive** — Vision and product flows; farm as backend (e.g. receipt analysis on Pixel).
-- **Privacy & speed** — No code or prompts leave your devices; first reply ~5–15s (cold), then ~2–5s.
+- **Cursor**, Coding, chat, Composer; use farm model (e.g. gpt-4o-mini) for free on-device inference.
+- **Other bots**, Discord, Slack, scripts, LangChain; point at `http://localhost:4000/v1` + `sk-local-farm`.
+- **Echeo / Olive**, Vision and product flows; farm as backend (e.g. receipt analysis on Pixel).
+- **Privacy & speed**, No code or prompts leave your devices; first reply ~5–15s (cold), then ~2–5s.
 
 ## Summary
 
@@ -115,6 +115,10 @@ The farm can run **two nodes** at once:
 
 ## License
 
-**GNU AGPLv3** — free to run, study, and modify. Run a modified version as a network service and you must share your changes. Own your tools; keep them ownable.
+**GNU AGPLv3**, free to run, study, and modify. Run a modified version as a network service and you must share your changes. Own your tools; keep them ownable.
 
 Copyright (C) 2026 Jeff Adkins (repairman29). See [LICENSE](LICENSE).
+
+## One safety note
+
+`sk-local-farm` is a placeholder key for the local LiteLLM proxy, change it to anything you like. If you tunnel the proxy out with ngrok, that URL becomes an open gateway to your models, so don't share it publicly or leave it running unattended.

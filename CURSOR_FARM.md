@@ -11,19 +11,19 @@ Use Cursor’s chat/completions against your local Pixel (and iPhone when you ad
 
 ---
 
-## Step 1 — Start the farm on the MacBook
+## Step 1, Start the farm on the MacBook
 
-**Terminal 1 — LiteLLM proxy**
+**Terminal 1, LiteLLM proxy**
 
 ```bash
-cd /Users/jeffadkins/neural-farm
+cd ~/neural-farm
 source .venv/bin/activate
 litellm --config config.yaml --port 4000
 ```
 
 Leave this running. You should see LiteLLM start and listen on 4000.
 
-**Terminal 2 — ngrok tunnel**
+**Terminal 2, ngrok tunnel**
 
 ```bash
 ngrok http 4000
@@ -37,7 +37,7 @@ Your Cursor base URL will be that + `/v1`, e.g. `https://abc123xyz.ngrok-free.ap
 
 ---
 
-## Step 2 — Point Cursor at the farm
+## Step 2, Point Cursor at the farm
 
 1. In **Cursor:** open **Settings** (Cmd + ,).
 2. Go to **Models** (or search “Models” / “OpenAI”).
@@ -50,7 +50,7 @@ Your Cursor base URL will be that + `/v1`, e.g. `https://abc123xyz.ngrok-free.ap
 
 ---
 
-## Step 3 — Use the farm model in Cursor
+## Step 3, Use the farm model in Cursor
 
 - In chat or completions, choose a model that uses this endpoint (e.g. the one you configured to use the Override Base URL).
 - Your requests will go: **Cursor → ngrok → MacBook (LiteLLM:4000) → Pixel (PocketPal:8080)**.
@@ -59,10 +59,10 @@ Your Cursor base URL will be that + `/v1`, e.g. `https://abc123xyz.ngrok-free.ap
 
 ---
 
-## Optional — Health check before using Cursor
+## Optional, Health check before using Cursor
 
 ```bash
-cd /Users/jeffadkins/neural-farm
+cd ~/neural-farm
 source .venv/bin/activate
 python cluster_monitor.py
 ```

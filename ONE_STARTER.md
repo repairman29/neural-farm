@@ -25,5 +25,5 @@ Result: one process (cron at the top of each hour) starts or refreshes the farm;
 
 ## Manual start (interactive)
 
-- **Foreground (one terminal):** `./dev_farm.sh` — proxy runs in that terminal; adapters in background.
-- **Background:** `./dev_farm.sh --bg` — if cron (or another run) is already starting the farm, this exits; otherwise it starts and holds the lock until done.
+- **Foreground (one terminal):** `./dev_farm.sh`, proxy runs in that terminal; adapters in background.
+- **Background:** `./dev_farm.sh --bg`, if cron (or another run) is already starting the farm, this exits; otherwise it starts and holds the lock until done.

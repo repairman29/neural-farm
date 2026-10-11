@@ -21,7 +21,7 @@ cat > ~/Library/LaunchAgents/com.neuralfarm.warmup.plist << 'EOF'
     <string>/usr/bin/env</string>
     <string>bash</string>
     <string>-c</string>
-    <string>cd /Users/jeffadkins/neural-farm && source .venv/bin/activate && python cluster_monitor.py --wake</string>
+    <string>cd ~/neural-farm && source .venv/bin/activate && python cluster_monitor.py --wake</string>
   </array>
   <key>StartCalendarInterval</key>
   <dict>
@@ -58,7 +58,7 @@ crontab -e
 Add (runs at 8:00 every day; adjust path):
 
 ```
-0 8 * * * cd /Users/jeffadkins/neural-farm && source .venv/bin/activate && python cluster_monitor.py --wake >> /tmp/neuralfarm_warmup.log 2>&1
+0 8 * * * cd ~/neural-farm && source .venv/bin/activate && python cluster_monitor.py --wake >> /tmp/neuralfarm_warmup.log 2>&1
 ```
 
 ---

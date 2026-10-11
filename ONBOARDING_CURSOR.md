@@ -1,4 +1,4 @@
-# Neural Farm — Onboarding for Cursor (New Project)
+# Neural Farm, Onboarding for Cursor (New Project)
 
 Use your local Neural Farm (Pixel + optional iPhone) from Cursor in any project. Do this once per Cursor install; then in every new project you only need to pick the farm model.
 
@@ -9,7 +9,7 @@ Use your local Neural Farm (Pixel + optional iPhone) from Cursor in any project.
 In a terminal, from the farm repo:
 
 ```bash
-cd /Users/jeffadkins/neural-farm
+cd ~/neural-farm
 ./dev_farm.sh
 ```
 
@@ -21,7 +21,7 @@ Leave that terminal open. You should see something like:
 
 If the farm is already running (e.g. from another terminal), you can skip this step.
 
-**Background option:** `./dev_farm.sh --bg` — starts everything in the background and exits.
+**Background option:** `./dev_farm.sh --bg`, starts everything in the background and exits.
 
 ---
 
@@ -44,7 +44,7 @@ When you open a **new project** or a new chat:
 
 1. Open the **model dropdown** (Chat or Composer).
 2. Choose a model that uses your **custom endpoint**, e.g. **GPT-4o mini** or **GPT-3.5 Turbo**.
-3. Do **not** choose Cursor Pro, Claude, or other premium models — those ignore the override and use paid APIs.
+3. Do **not** choose Cursor Pro, Claude, or other premium models, those ignore the override and use paid APIs.
 
 That’s it. Requests go: **Cursor → localhost:4000 → your Pixel (and iPhone if configured)**.
 
@@ -71,7 +71,7 @@ You should get JSON with an assistant reply. If you get connection refused, star
 From the neural-farm folder:
 
 ```bash
-cd /Users/jeffadkins/neural-farm
+cd ~/neural-farm
 ./status.sh
 ```
 
@@ -89,7 +89,7 @@ This runs status, checks the Pixel device URL from `.env`, and sends one short c
 
 **2. Real completion (farm actually talking to the device)**
 
-Run the same quick test as above — but this time you care about the **response body**:
+Run the same quick test as above, but this time you care about the **response body**:
 
 ```bash
 curl -s -X POST http://localhost:4000/v1/chat/completions \
@@ -113,7 +113,7 @@ When you run `npm run blog:update-with-farm` from the website:
 
 | Step | Action |
 |------|--------|
-| 1 | `cd /Users/jeffadkins/neural-farm && ./dev_farm.sh` (leave running) |
+| 1 | `cd ~/neural-farm && ./dev_farm.sh` (leave running) |
 | 2 | Cursor Settings → Models → Base URL `http://localhost:4000/v1`, API Key `sk-local-farm` |
 | 3 | In Chat/Composer, pick **GPT-4o mini** (or another farm model), not Cursor Pro/Claude |
 

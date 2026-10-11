@@ -22,7 +22,7 @@ Save (or move) both files into **`~/Downloads`**.
 From the project folder:
 
 ```bash
-cd /Users/jeffadkins/neural-farm
+cd ~/neural-farm
 chmod +x sideload_models.sh
 ./sideload_models.sh
 ```
@@ -47,8 +47,8 @@ chmod +x sideload_models.sh
 
 1. Connect the Pixel with USB-C.
 2. On the phone, when the USB notification appears, choose **File transfer** (MTP).
-3. **Option A — Script (if adb is installed):** Run `./sideload_models.sh`; it will push `gemma-3-4b-it-Q4_K_M.gguf` to the device **Download** folder.
-4. **Option B — Manual:** On the Mac, open **Finder** (or Android File Transfer) and copy **`gemma-3-4b-it-Q4_K_M.gguf`** into the phone’s **Download** folder.
+3. **Option A, Script (if adb is installed):** Run `./sideload_models.sh`; it will push `gemma-3-4b-it-Q4_K_M.gguf` to the device **Download** folder.
+4. **Option B, Manual:** On the Mac, open **Finder** (or Android File Transfer) and copy **`gemma-3-4b-it-Q4_K_M.gguf`** into the phone’s **Download** folder.
 5. On the Pixel: open **PocketPal** → **+** (or “Add”) → **Import from Local Storage** → choose the file from **Download**.
 
 ---

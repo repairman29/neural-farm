@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Neural Farm — Cluster Monitor
+Neural Farm, Cluster Monitor
 
 Checks health of each phone/node in the farm and reports status to the terminal.
 Run from your MacBook while LiteLLM proxy and devices are on the network.
@@ -100,9 +100,9 @@ def report_one(node: dict) -> str:
         if models:
             line += f"  models={models}"
     else:
-        line = f"  [{status.upper():7}] {model:24} {base:40} {latency or '—'}ms"
+        line = f"  [{status.upper():7}] {model:24} {base:40} {latency or '-'}ms"
         if err:
-            line += f"  — {err}"
+            line += f" , {err}"
     return line
 
 
@@ -111,7 +111,7 @@ def run_report(config_path: str, wake: bool = False, wake_model: str = "gemma-3-
     endpoints = load_endpoints(config_path)
     if not endpoints:
         return False
-    print(f"\nNeural Farm — Health Check ({config_path})")
+    print(f"\nNeural Farm, Health Check ({config_path})")
     print("  " + "-" * 80)
     any_up = False
     for ep in endpoints:

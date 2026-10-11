@@ -9,13 +9,13 @@ What you need to do so the farm stays reliable.
 The farm does **not** run as a system service by default. Start it when you sit down to work:
 
 ```bash
-cd /Users/jeffadkins/neural-farm
+cd ~/neural-farm
 ./dev_farm.sh
 ```
 
 Leave that terminal open. Or run `./dev_farm.sh --bg` to start everything in the background and close the terminal.
 
-**Optional — keep it running across reboots/sleep:** Use [docs/SCHEDULED_WARMUP.md](docs/SCHEDULED_WARMUP.md) or a launchd plist to start the farm at login. For most use, starting it manually when you need it is enough.
+**Optional, keep it running across reboots/sleep:** Use [docs/SCHEDULED_WARMUP.md](docs/SCHEDULED_WARMUP.md) or a launchd plist to start the farm at login. For most use, starting it manually when you need it is enough.
 
 ---
 
@@ -60,9 +60,9 @@ The **Pixel** (and **iPhone** if you use it) must have **InferrLM** (or your LLM
 1. **Restart the farm**  
    `pkill -f inferrlm_adapter; pkill -f "litellm --config config.yaml"; ./dev_farm.sh`
 2. **Check IPs**  
-   `./sniff_devices.sh` — if your devices don’t show up, fix network/app, then update `.env` and restart again.
+   `./sniff_devices.sh`, if your devices don’t show up, fix network/app, then update `.env` and restart again.
 3. **Check status**  
-   `./status.sh` — if you see “down,” remember the adapters are single-threaded; they can show “down” while busy. Try the completion test in [ONBOARDING_CURSOR.md](ONBOARDING_CURSOR.md) (“How do we know if it’s working?”).
+   `./status.sh`, if you see “down,” remember the adapters are single-threaded; they can show “down” while busy. Try the completion test in [ONBOARDING_CURSOR.md](ONBOARDING_CURSOR.md) (“How do we know if it’s working?”).
 
 ---
 

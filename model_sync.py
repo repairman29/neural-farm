@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Neural Farm — sync GGUF models to the Pixel and verify the API.
+Neural Farm, sync GGUF models to the Pixel and verify the API.
 
 Uses adb (project .android-tools or system PATH) to list/push files.
 Optionally checks the Pixel's /v1/models endpoint.
